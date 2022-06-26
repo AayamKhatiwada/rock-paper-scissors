@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .App{
+    text-align: center;
+  }
+
+  .board{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .hand{
+    width: 200px;
+    height: 200px;
+  }
+
+  .user{
+    margin-right: 50px;
+    padding: 3% 7%;
+    background: linear-gradient(
+        90deg,
+        rgb(164, 164, 252) 0%,
+        rgb(49, 119, 230) 100%
+      );
+  }
+  .computer{
+    padding: 3% 7%;
+    background: linear-gradient(
+        90deg,
+        rgb(164, 164, 252) 0%,
+        rgb(49, 119, 230) 100%
+      );
+  }
+
+  button{
+    padding: 30px 30px;
+    margin-right: 50px;
+  }
+
+
+
