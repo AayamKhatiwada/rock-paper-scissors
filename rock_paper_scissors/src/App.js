@@ -6,7 +6,7 @@ function App() {
   const [comState, comChangeState] = useState('Rock')
   const [userPoint, userChangePoint] = useState(0)
   const [comPoint, comChangePoint] = useState(0)
-  const [game, gameState] = useState('true')
+  const [game, gameState] = useState('false')
 
   function changeHand(clicked){
     changeState(clicked)
@@ -36,6 +36,14 @@ function App() {
     return gameState(false)
   }
 
+  function reset(){
+    changeHand('Rock')
+    userChangePoint(0)
+    comChangePoint(0)
+    comChangeState('Rock')
+    gameState(true)
+  }
+
   return (
     <div className="App">
       <h1>Rock Paper Scissors</h1>
@@ -49,11 +57,31 @@ function App() {
           <img className='hand' src={`../images/${comState}.png`} alt={comState}/>
         </div>
       </div>
+      {game && (
       <div className='buttons'>
         <button onClick={()=> {changeHand('Rock')}}>Rock</button>
         <button onClick={()=> {changeHand('Paper')}}>Paper</button>
         <button onClick={()=> {changeHand('Scissors')}}>Scissors</button>
       </div>
+      )}
+      {!game && userPoint<comPoint &&(
+        <div>
+          <h4>You lose</h4>
+          <button onClick={()=>{reset()}}>Restart</button>
+        </div>
+      )}
+      {!game && userPoint>comPoint &&(
+        <div>
+          <h4>You Win</h4>
+          <button onClick={()=>{reset()}}>Restart</button>
+        </div>
+      )}
+      {!game && userPoint===comPoint &&(
+        <div>
+          <h4>Draw</h4>
+          <button onClick={()=>{reset()}}>Restart</button>
+        </div>
+      )}
     </div>
   );
 }
