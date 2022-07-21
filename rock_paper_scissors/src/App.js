@@ -50,11 +50,11 @@ function App() {
       <div className='board'>
         <div className='user'>
           <h4>User Score : {userPoint}</h4>
-          <img className='hand' src={`../images/${state}.png`} alt={state}/>
+          <img className='hand' src={require(`./images/${state}.png`)} alt={state}/>
         </div>
         <div className='computer'>
           <h4>Computer Score : {comPoint}</h4>
-          <img className='hand' src={`../images/${comState}.png`} alt={comState}/>
+          <img className='hand' src={require(`./images/${comState}.png`)} alt={comState}/>
         </div>
       </div>
       {game && (
